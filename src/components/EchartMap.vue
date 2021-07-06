@@ -35,12 +35,15 @@
         methods: {
             mapChart() {
                 var myChart = echarts.init(document.getElementById('mapChart'));
+                // var myChart = echarts.init(document.getElementById('mapChart'), null, {renderer: 'svg'});
 
-                axios.get("./static/json/map/100000.json", {}).then(response => {
-                    var chinaJson = response.data;
-                    echarts.registerMap("china", chinaJson);
+                // axios.get("./static/json/map/world.json", {}).then(response => {
+                axios.get("https://raw.githubusercontent.com/apache/echarts/master/test/data/map/json/world.json", {}).then(response => {
+                    var worldJson = response.data;
+                    echarts.registerMap("world", worldJson);
                     var series = [];
                     series.push({
+                        // lines that goes from the source to the destination
                         type: 'lines',
                         zlevel: 1,
                         effect: {
@@ -58,6 +61,7 @@
                         },
                         data: this.initData1(this.mapData)
                     }, {
+                        // static lines lying under the moving ones
                         type: 'lines',
                         zlevel: 2,
                         effect: {
@@ -76,6 +80,7 @@
                         },
                         data: this.initData1(this.mapData)
                     }, {
+                        // dark scatters
                         type: 'effectScatter',
                         coordinateSystem: 'geo',
                         zlevel: 2,
@@ -94,6 +99,7 @@
                         },
                         data: this.initData2(this.mapData)
                     }, {
+                        // bright scatters
                         type: 'effectScatter',
                         coordinateSystem: 'geo',
                         zlevel: 2,
@@ -125,10 +131,20 @@
                             left: 20,
                             top: 10,
                             textStyle: {
-                                fontSize: 16,
+                                fontSize: '5px',
                                 fontFamily: 'PingFangSC-Regular',
                                 fontWeight: 'lighter',
                                 color: this.chartOption.titleColor
+                            }
+                        },
+                        toolbox: {
+                            show : true,
+                            feature : {
+                                saveAsImage : {
+                                    show: true,
+                                    type: 'svg',
+                                    pixelRatio:10
+                                }
                             }
                         },
                         tooltip: {
@@ -145,7 +161,8 @@
                             selectedMode: 'single'
                         },
                         geo: {
-                            map: 'china',
+                            map: 'world',
+                            // center: [115.97, 29.71],
                             label: {
                                 emphasis: {
                                     show: false
@@ -168,37 +185,41 @@
                 });
             },
             initData1(data) {
-                var reault = [];
+                var result = [];
                 for (var i = 0; i < data.length; i++) {
                     var el = data[i];
                     var fromData = `${el.from_longitude},${el.from_latitude}`.split(',')
                     var toData = `${el.to_longitude},${el.to_latitude}`.split(',')
                     var val = []
                     val.push(fromData, toData)
-                    reault.push({
+                    result.push({
                         fromName: el.from,
                         toName: el.to,
                         coords: val,
                         value: el.num
                     })
                 }
-                return reault;
+                return result;
             },
             initData2(data) {
-                var reault = [];
+                var result = [];
                 for (var i = 0; i < data.length; i++) {
                     var el = data[i];
                     var val = `${el.to_longitude},${el.to_latitude},30`.split(',')
-                    reault.push({
+                    result.push({
                         name: el.to,
                         value: val
                     })
                 }
-                return reault;
+                console.log(result);
+                return result;
             },
+            
         },
         mounted() {
             this.mapChart();
+            
+
         },
     }
 
