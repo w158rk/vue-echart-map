@@ -211,12 +211,21 @@
                         value: val
                     })
                 }
-                console.log(result);
+                for (var i = 0; i < data.length; i++) {
+                    var el = data[i];
+                    var val = `${el.from_longitude},${el.from_latitude},30`.split(',')
+                    result.push({
+                        name: el.from,
+                        value: val
+                    })
+                }
                 return result;
             },
             
         },
         mounted() {
+            console.log("mark");
+            console.log(this.mapData);
             this.mapChart();
             
 

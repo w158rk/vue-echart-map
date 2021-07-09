@@ -10,6 +10,8 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "antlr4": "^4.8.0",
+    "antlr4-webpack-loader": "^0.1.1",
     "vue": "^2.5.2"
   },
   "devDependencies": {

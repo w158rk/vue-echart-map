@@ -31,6 +31,7 @@ module.exports = {
   },
   module: {
     rules: [
+      { test: /\.g4/, loader: 'antlr4-webpack-loader' },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
