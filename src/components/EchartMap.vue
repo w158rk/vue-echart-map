@@ -205,19 +205,40 @@
                 var result = [];
                 for (var i = 0; i < data.length; i++) {
                     var el = data[i];
-                    var val = `${el.to_longitude},${el.to_latitude},30`.split(',')
-                    result.push({
-                        name: el.to,
-                        value: val
-                    })
+                    var val = `${el.to_longitude},${el.to_latitude},30`.split(',');
+                    
+                    // 仅显示英文
+                    if(el.to.search(/[a-z]/)>0) {
+                        result.push({
+                            name: el.to,
+                            value: val
+                        });
+                    }
+                    else {
+                        result.push({
+                            name: '',
+                            value: val
+                        });
+                    }
                 }
+
                 for (var i = 0; i < data.length; i++) {
                     var el = data[i];
-                    var val = `${el.from_longitude},${el.from_latitude},30`.split(',')
-                    result.push({
-                        name: el.from,
-                        value: val
-                    })
+                    var val = `${el.from_longitude},${el.from_latitude},30`.split(',');
+                    
+                    // 仅显示英文
+                    if(el.from.search(/[a-z]/)>0) {
+                        result.push({
+                            name: el.from,
+                            value: val
+                        });
+                    }
+                    else {
+                        result.push({
+                            name: '',
+                            value: val
+                        });
+                    }
                 }
                 return result;
             },

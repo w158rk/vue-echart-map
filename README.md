@@ -161,9 +161,9 @@
 <!-- CONTACT -->
 ## 联系方式
 
-w158rk - wrk15835@outlook.com
+- w158rk - wrk15835@outlook.com
 
-Project Link: [https://github.com/w158rk/vue-echart-map](https://github.com/w158rk/vue-echart-map)
+- 项目链接: [https://github.com/w158rk/vue-echart-map](https://github.com/w158rk/vue-echart-map)
 
 
 

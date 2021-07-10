@@ -9,19 +9,34 @@
 <script>
     import axios from 'axios';
     import EchartMap from './components/EchartMap'
-    import parse from './parser';
+    import {loadInnerLocations, parse} from './parser';
     export default {
         components: {
             EchartMap
         },
 
+        methods: {
+            init() {
+                // load inner location data
+                return axios.get("./static/json/world-cities.json", {}).then(response => {
+                    loadInnerLocations(response.data);
+                });
+            },
+
+            load() {
+                // load the actual data
+                axios.get("./static/test.trace", {}).then(response => {
+                    var input = response.data;
+                    var result = parse(input);
+                    console.log(result);
+                    this.mapData = result;
+                });
+            },
+        },
+
         mounted() {
-            axios.get("./static/test.trace", {}).then(response => {
-                var input = response.data;
-                var result = parse(input);
-                console.log(result);
-                this.mapData = result;
-            });
+            this.init()
+            .then(this.load());
         },
 
         data() {

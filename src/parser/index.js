@@ -1,5 +1,6 @@
 // test.js
 import antlr4 from 'antlr4';
+import axios from 'axios';
 import {TraceLexer, TraceParser, TraceVisitor, TraceListener} from './Trace.g4';
 
 class DebugListener extends TraceListener {
@@ -55,7 +56,6 @@ class Visitor extends TraceVisitor{
             console.error(`cannot find the location of ${obj.to}`);
         }
 
-
         obj.from_longitude = locations[obj.from][0]
         obj.from_latitude = locations[obj.from][1]
         obj.to_longitude = locations[obj.to][0]
@@ -69,9 +69,11 @@ class Visitor extends TraceVisitor{
 
 }
 
+export function loadInnerLocations(data) {
+    locations = Object.assign(locations, data);
+}
 
-
-export default function parse(input) {
+export function parse(input) {
     parseResult = [];
     const chars = new antlr4.InputStream(input);
     const lexer = new TraceLexer(chars);
@@ -79,7 +81,7 @@ export default function parse(input) {
     const parser = new TraceParser(tokens);
     parser.buildParseTrees = true;
     const tree = parser.records();
-    antlr4.tree.ParseTreeWalker.DEFAULT.walk(new DebugListener(), tree);
+    // antlr4.tree.ParseTreeWalker.DEFAULT.walk(new DebugListener(), tree);
     tree.accept(new Visitor());
     return parseResult;
 }
