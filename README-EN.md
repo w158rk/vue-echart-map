@@ -29,16 +29,16 @@
   <h3 align="center">Vue-Echart-Map</h3>
 
   <p align="center">
-    记录你的足迹
+    Trace your footprint in this world
     <br />
     <!-- <a href="https://github.com/w158rk/vue-echart-map"><strong>Explore the docs »</strong></a> -->
     <!-- <br /> -->
     <br />
-    <a>查看演示</a>
+    <a>View Demo</a>
     ·
-    <a href="https://github.com/w158rk/vue-echart-map/issues">报告Bug</a>
+    <a href="https://github.com/w158rk/vue-echart-map/issues">Report Bug</a>
     ·
-    <a href="https://github.com/w158rk/vue-echart-map/issues">请求功能</a>
+    <a href="https://github.com/w158rk/vue-echart-map/issues">Request Feature</a>
   </p>
 </p>
 
@@ -46,27 +46,27 @@
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
-  <summary>目录</summary>
+  <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">关于项目</a>
+      <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">构建依赖</a></li>
+        <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">入门</a>
+      <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">依赖安装</a></li>
-        <li><a href="#installation">安装</a></li>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">使用</a></li>
-    <li><a href="#roadmap">路线图</a></li>
-    <li><a href="#contributing">贡献</a></li>
-    <li><a href="#license">许可证</a></li>
-    <li><a href="#contact">联系方式</a></li>
-    <li><a href="#acknowledgements">致谢</a></li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
@@ -77,7 +77,8 @@
 
 [![Product Name Screen Shot][product-screenshot]](#)
 
-以文本方式记录你的足迹，上图的输入文本为：
+This project aims to help you record your footprint in the world in text format.
+The input for the screenshot is as the follows:
 
 ```
 保山 99.1729 25.05753
@@ -93,73 +94,76 @@
 烟台 沈阳
 ```
 
-### 构建依赖
+### Built With
 
 * [Vue](https://vuejs.org/)
 * [Node.js](https://nodejs.org/)
 * [ANTLR 4](https://www.antlr.org/)
 
 <!-- GETTING STARTED -->
-## 入门
+## Getting Started
 
-克隆仓库代码。:smile:
+Clone the repository and enjoy.
 
-### 依赖安装
+### Prerequisites
 
-1. 安装 [Node.js](https://nodejs.org/)
-2. 安装 [ANTLR 4](https://www.antlr.org/)
+1. install [Node.js](https://nodejs.org/)
+2. install [ANTLR 4](https://www.antlr.org/)
 
-### 安装
+### Installation
 
-1. 克隆项目代码
+1. Clone the repo
    ```sh
    git clone https://github.com/w158rk/vue-echart-map.git
    ```
-2. 安装npm包
+2. Install NPM packages
    ```sh
    npm install
    ```
-3. 构建项目
+3. Build the dist
    ```sh
    npm run build
    ```
 
 
 <!-- USAGE EXAMPLES -->
-## 使用
+## Usage
 
-构建项目之后在`dist/`目录下运行http服务器，例如，可以使用`npx serve .`运行服务。
+Run a http server in the `dist/` directory. For example, you can run `npx serve .` in the dist.
 
 
 <!-- ROADMAP -->
-## 路线图
+## Roadmap
 
-- ~~支持ANTLR 4~~
-- 内置主要城市的经纬度信息
-- 高清图片导出 
-- 用户颜色自定义 
+- ~~ANTLR 4 support~~
+- location data for some major cities
+- high-quality image export 
+- custom color setting 
+
 
 <!-- CONTRIBUTING -->
-## 贡献
+## Contributing
 
-贡献使开源社区成为一个值得学习、启发和创造的地方。 **非常感谢**你所做的任何贡献。
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-1. Fork 项目
-2. 创建功能分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. Push 到分支 (`git push origin feature/AmazingFeature`)
-5. 打开 Pull 请求
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
 
 <!-- LICENSE -->
-## 许可证
+## License
 
-- 与[原项目](https://github.com/tbuy/vue-echart-map)作者协商中。
+In discussion with the author of the [forked project](https://github.com/tbuy/vue-echart-map) 
 
 <!-- Distributed under the MIT License. See `LICENSE` for more information. -->
 
 
 <!-- CONTACT -->
-## 联系方式
+## Contact
 
 w158rk - wrk15835@outlook.com
 
@@ -168,7 +172,7 @@ Project Link: [https://github.com/w158rk/vue-echart-map](https://github.com/w158
 
 
 <!-- ACKNOWLEDGEMENTS -->
-## 致谢
+## Acknowledgements
 * [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
 * [Img Shields](https://shields.io)
 * [Choose an Open Source License](https://choosealicense.com)
